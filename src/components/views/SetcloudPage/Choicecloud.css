@@ -1,0 +1,16 @@
+.box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.title {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 3ch;
+}
+
+.cloud-box {
+    padding-top: 20px;
+}

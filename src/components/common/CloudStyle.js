@@ -32,6 +32,7 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
 `;
 export const InputTitle = styled.input`
   width: 239px;
@@ -74,7 +75,7 @@ export const InputContent = styled.textarea`
   }
 `;
 export const InputName = styled.input`
-  width: 219px;
+  width: 239px;
   height: 36px;
   border: none;
   resize: none;

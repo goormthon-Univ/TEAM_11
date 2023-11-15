@@ -5,7 +5,7 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('/public/img/main/background.png');
+  background-image: url("/public/img/main/background.png");
   background-size: cover;
   /* 화면을 완전히 채우도록 설정 */
   background-repeat: no-repeat;
@@ -23,5 +23,5 @@ body {
 }
 
 code {
-  font-family: 'Yrsa', sans-serif;
+  font-family: "Yrsa", sans-serif;
 }

@@ -94,7 +94,7 @@ export default function CloudDetail() {
         <D.CloudContent>{cloud.content}</D.CloudContent>
         <D.CloudNameWrapper>
           <D.CloudDate>{formattedDateTime}</D.CloudDate>
-          <D.CloudName>{cloud.nickname}</D.CloudName>
+          <D.CloudName>From.{cloud.nickname}</D.CloudName>
         </D.CloudNameWrapper>
       </D.CloudWrapper>
       <D.Delete>삭제하기</D.Delete>

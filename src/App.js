@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/views/MainPage/Main";
-import './App.css';
+import Grateful from "./components/posts/grateful/Grateful";
+import Apologetic from "./components/posts/apologetic/Apologetic";
+import "./App.css";
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Main />} />
+          <Route exact path="/grateful" element={<Grateful />} />
+          <Route exact path="/apologetic" element={<Apologetic />} />
         </Routes>
       </BrowserRouter>
     </div>

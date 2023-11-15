@@ -11,30 +11,27 @@ export const Title = styled.p`
   text-align: left;
   margin: 29px 0 0 27px;
 `;
-
-export const Info = styled.div`
-  color: #4a4a4a;
+export const BoomCount = styled.div`
+  color: #000;
+  text-align: center;
   font-family: Anek Devanagari;
-  font-size: 12px;
+  font-size: 25px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: normal;
-
-  text-align: left;
-  margin: 10px 27px;
+  margin-top: 36px;
 `;
-
 export const Cloud = styled.img`
   width: 350px;
   margin: 0;
 `;
-export const InputWrapper = styled.div`
+export const CloudWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px;
 `;
-export const InputTitle = styled.input`
+export const CloudTitle = styled.div`
   width: 239px;
   height: 59px;
   border: none;
@@ -45,16 +42,9 @@ export const InputTitle = styled.input`
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-
-  &:focus {
-    outline: none;
-  }
-
-  &::placeholder {
-    color: #000;
-  }
+  text-align: left;
 `;
-export const InputContent = styled.textarea`
+export const CloudContent = styled.div`
   width: 239px;
   height: 304px;
   border: none;
@@ -65,71 +55,46 @@ export const InputContent = styled.textarea`
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-
-  &:focus {
-    outline: none;
-  }
-
-  &::placeholder {
-    color: #000;
-  }
+  text-align: left;
 `;
-export const InputName = styled.input`
+export const CloudNameWrapper = styled.div`
   width: 239px;
-  height: 36px;
-  border: none;
-  resize: none;
+  display: flex;
+  justify-content: space-between;
+`;
+export const CloudDate = styled.p`
   color: #000;
+  text-align: center;
+  font-family: Anek Devanagari;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+
+export const CloudName = styled.p`
+  color: #000;
+  text-align: right;
   font-family: Anek Devanagari;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-
-  &:focus {
-    outline: none;
-  }
-
-  &::placeholder {
-    color: #000;
-  }
 `;
-export const SubmitWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 17px;
-`;
-export const Cancel = styled.div`
-  width: 155px;
+
+export const Delete = styled.div`
+  width: 294px;
   height: 57px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
   background: #fff;
-  margin: 24px 0;
+  margin: 24px auto;
   color: #000;
   text-align: center;
   font-family: Anek Devanagari;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-`;
-export const Submit = styled.div`
-  width: 155px;
-  height: 57px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  background: #fff;
-  margin: 24px 0;
-  color: #000;
-  text-align: center;
-  font-family: Anek Devanagari;
-  font-size: 20px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

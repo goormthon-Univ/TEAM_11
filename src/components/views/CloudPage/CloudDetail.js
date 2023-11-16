@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as D from "./../Cloud/CloudDetailStye";
+import * as D from "./CloudDetailStye";
 import gratefulImg from "./../../../images/cloud/gratefulCloud.svg";
 import apologeticImg from "./../../../images/cloud/apologeticCloud.svg";
 import boomImg from "./../../../images/cloud/boomCloud.svg";
@@ -7,6 +7,7 @@ import boomImg from "./../../../images/cloud/boomCloud.svg";
 export default function CloudDetail() {
   const [cloudImg, setCloudImg] = useState("");
   const [restTime, setRestTime] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const data = {
     cloudType: "3",
     cloudIdx: "1",
@@ -84,6 +85,12 @@ export default function CloudDetail() {
     return () => clearInterval(intervalId);
   }, [cloud.createdAt]);
 
+  function goModal() {
+    setIsModalOpen(true);
+  }
+  function noModal() {
+    setIsModalOpen(false);
+  }
   return (
     <>
       <D.Title>00님의 {data.cloudIdx}번째 구름☁️</D.Title>
@@ -97,7 +104,18 @@ export default function CloudDetail() {
           <D.CloudName>From.{cloud.nickname}</D.CloudName>
         </D.CloudNameWrapper>
       </D.CloudWrapper>
-      <D.Delete>삭제하기</D.Delete>
+      <D.Delete onClick={goModal}>삭제하기</D.Delete>
+      {isModalOpen && (
+        <D.Modal>
+          <D.ModalTitle>삭제하시겠습니까?</D.ModalTitle>
+          <D.ModalContent>삭제하시겠습니까?</D.ModalContent>
+          <D.ModalButtonWrapper>
+            <D.ModalCancel onClick={noModal}>취소</D.ModalCancel>
+            <D.ModalDelete>확인</D.ModalDelete>
+          </D.ModalButtonWrapper>
+        </D.Modal>
+      )}
+      {isModalOpen && <D.Overlay></D.Overlay>}
     </>
   );
 }

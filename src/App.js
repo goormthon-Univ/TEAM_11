@@ -4,8 +4,9 @@ import Choicecloud from "./components/views/SetcloudPage/Choicecloud";
 import Specialcloud from "./components/views/SetcloudPage/Specialcloud";
 import Grateful from "./components/posts/grateful/Grateful";
 import Apologetic from "./components/posts/apologetic/Apologetic";
+import Supportive from "./components/posts/supportive/Supportive";
 import Boom from "./components/posts/boom/Boom";
-import CloudDetail from "./components/views/Cloud/CloudDetail";
+import CloudDetail from "./components/views/CloudPage/CloudDetail";
 import "./App.css";
 import styled from "styled-components";
 
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/specialcloud" element={<Specialcloud />} />
             <Route exact path="/grateful" element={<Grateful />} />
             <Route exact path="/apologetic" element={<Apologetic />} />
+            <Route exact path="/supportive" element={<Supportive />} />
             <Route exact path="/boom" element={<Boom />} />
             <Route exact path="/cloud/:id" element={<CloudDetail />} />
           </Routes>

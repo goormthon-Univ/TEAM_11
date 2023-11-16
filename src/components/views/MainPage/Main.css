@@ -75,31 +75,3 @@
   transition: background-color 0.3s, color 0.3s;
   /* 전환 효과 */
 }
-
-.footer {
-  background-color: #2F2F2F;
-  display: flex;
-  flex-direction: column;
-  color: #FFFFFF;
-  width: 100vw;
-  height: 9vh;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-}
-
-.copyright {
-  font-size: 1ch;
-  font-weight: bold;
-  text-align: left;
-  padding-left: 20px;
-}
-
-.introduce {
-  display: flex;
-  align-items: center;
-  font-size: 1ch;
-  font-weight: bold;
-  text-align: left;
-  padding-left: 20px;
-}

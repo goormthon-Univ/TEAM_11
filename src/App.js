@@ -6,8 +6,10 @@ import Login from "./components/views/LoginPage/Login";
 import Designcloud from "./components/views/SetcloudPage/Designcloud";
 import Grateful from "./components/posts/grateful/Grateful";
 import Apologetic from "./components/posts/apologetic/Apologetic";
+import Supportive from "./components/posts/supportive/Supportive";
 import Boom from "./components/posts/boom/Boom";
-import CloudDetail from "./components/views/Cloud/CloudDetail";
+import CloudDetail from "./components/views/CloudPage/CloudDetail";
+import Footer from "./components/common/footer/Footer";
 import "./App.css";
 import styled from "styled-components";
 
@@ -24,9 +26,11 @@ function App() {
             <Route exact path="/designcloud" element={<Designcloud />} />
             <Route exact path="/grateful" element={<Grateful />} />
             <Route exact path="/apologetic" element={<Apologetic />} />
+            <Route exact path="/supportive" element={<Supportive />} />
             <Route exact path="/boom" element={<Boom />} />
             <Route exact path="/cloud/:id" element={<CloudDetail />} />
           </Routes>
+          <Footer />
         </GlobalWrapper>
       </BrowserRouter>
     </div>

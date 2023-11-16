@@ -74,16 +74,6 @@ export default function Main() {
         <button className="copylink_btn" onClick={handleButtonClick}>하늘 링크 복사하기
         </button>
       </div>
-      <div className="footer">
-        <div className="copyright">
-          Copyright © 2023 구름이 전해주는 편지. All rights reserved.
-        </div>
-        <div className="introduce">
-          <div className="introduce-app">
-            구름이 전해주는 편지 소개 </div>
-          <div className="introduce-team"> | 구루미 팀 소개</div>
-        </div>
-      </div>
     </div>
   );
 }

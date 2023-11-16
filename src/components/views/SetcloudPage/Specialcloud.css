@@ -1,76 +1,76 @@
 .specialbox-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
 }
 
 .title-wrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .title {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-    font-weight: bold;
-    font-size: 3ch;
-
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  font-weight: bold;
+  font-size: 3ch;
 }
 
 .title img {
-    padding-right: 80px;
+  padding-right: 80px;
 }
 
 .cloud-box {
-    position: relative;
+  position: relative;
+  color: #000;
 }
 
 .selectgrateful {
-    position: absolute;
-    bottom: 40%;
-    left: 28%;
-    font-weight: bold;
-    font-size: 3.5ch;
-    /* padding-left: 150px; */
-    /* transform: translate(-50%, -50%); */
+  position: absolute;
+  bottom: 40%;
+  left: 28%;
+  font-weight: bold;
+  font-size: 3.5ch;
+  /* padding-left: 150px; */
+  /* transform: translate(-50%, -50%); */
 }
 
 .selectapologetic {
-    position: absolute;
-    bottom: 45%;
-    left: 26%;
-    font-weight: bold;
-    font-size: 3.5ch;
-    /* padding-left: 150px; */
-    /* transform: translate(-50%, -50%); */
+  position: absolute;
+  bottom: 45%;
+  left: 26%;
+  font-weight: bold;
+  font-size: 3.5ch;
+  /* padding-left: 150px; */
+  /* transform: translate(-50%, -50%); */
 }
 
 .selectcheerful {
-    position: absolute;
-    bottom: 40%;
-    left: 25%;
-    font-weight: bold;
-    font-size: 3.5ch;
-    /* padding-left: 150px; */
-    /* transform: translate(-50%, -50%); */
+  position: absolute;
+  bottom: 40%;
+  left: 25%;
+  font-weight: bold;
+  font-size: 3.5ch;
+  /* padding-left: 150px; */
+  /* transform: translate(-50%, -50%); */
 }
 
 .explain-grateful {
-    position: absolute;
-    bottom: 10%;
-    left: 23%;
+  position: absolute;
+  bottom: 10%;
+  left: 23%;
 }
 
 .explain-apologetic {
-    position: absolute;
-    bottom: 10%;
-    left: 23%;
+  position: absolute;
+  bottom: 10%;
+  left: 23%;
 }
 
 .explain-cheerful {
-    position: absolute;
-    bottom: 5%;
-    left: 25%;
+  position: absolute;
+  bottom: 5%;
+  left: 25%;
 }

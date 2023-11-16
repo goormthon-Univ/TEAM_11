@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
-import * as D from "./../Cloud/CloudDetailStye";
+import * as D from "./CloudDetailStye";
 import gratefulImg from "./../../../images/cloud/gratefulCloud.svg";
 import apologeticImg from "./../../../images/cloud/apologeticCloud.svg";
+import supportiveImg from "./../../../images/cloud/supportiveCloud.svg";
 import boomImg from "./../../../images/cloud/boomCloud.svg";
+import tailCloud from "./../../../images/cloud/tailCloud.svg";
 
 export default function CloudDetail() {
   const [cloudImg, setCloudImg] = useState("");
   const [restTime, setRestTime] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const data = {
-    cloudType: "3",
+    cloudType: "4",
     cloudIdx: "1",
   };
   useEffect(() => {
@@ -23,7 +26,7 @@ export default function CloudDetail() {
         setCloudImg(apologeticImg);
         break;
       case "4":
-        setCloudImg(gratefulImg);
+        setCloudImg(supportiveImg);
         break;
       default:
         setCloudImg(boomImg);
@@ -84,10 +87,16 @@ export default function CloudDetail() {
     return () => clearInterval(intervalId);
   }, [cloud.createdAt]);
 
+  function goModal() {
+    setIsModalOpen(true);
+  }
+  function noModal() {
+    setIsModalOpen(false);
+  }
   return (
     <>
       <D.Title>00님의 {data.cloudIdx}번째 구름☁️</D.Title>
-      {data.cloudType === "5" ? <D.BoomCount>💣{restTime}</D.BoomCount> : null}
+      {data.cloudType === "5" && <D.BoomCount>💣{restTime}</D.BoomCount>}
       <D.Cloud src={cloudImg} />
       <D.CloudWrapper>
         <D.CloudTitle>{cloud.title}</D.CloudTitle>
@@ -97,7 +106,31 @@ export default function CloudDetail() {
           <D.CloudName>From.{cloud.nickname}</D.CloudName>
         </D.CloudNameWrapper>
       </D.CloudWrapper>
-      <D.Delete>삭제하기</D.Delete>
+      {data.cloudType === "4" && (
+        <D.CommentContainer>
+          <D.CommentWrapper>
+            <D.Comment src={tailCloud} />
+            <D.commentContent>파이팅</D.commentContent>
+          </D.CommentWrapper>
+          <D.CommentWrapper>
+            <D.Comment src={tailCloud} />
+            <D.commentContent>dd</D.commentContent>
+          </D.CommentWrapper>
+        </D.CommentContainer>
+      )}
+      <D.Delete onClick={goModal}>삭제하기</D.Delete>
+
+      {isModalOpen && (
+        <D.Modal>
+          <D.ModalTitle>삭제하시겠습니까?</D.ModalTitle>
+          <D.ModalContent>삭제하시겠습니까?</D.ModalContent>
+          <D.ModalButtonWrapper>
+            <D.ModalCancel onClick={noModal}>취소</D.ModalCancel>
+            <D.ModalDelete>확인</D.ModalDelete>
+          </D.ModalButtonWrapper>
+        </D.Modal>
+      )}
+      {isModalOpen && <D.Overlay></D.Overlay>}
     </>
   );
 }

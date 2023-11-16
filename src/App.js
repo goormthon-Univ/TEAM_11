@@ -8,6 +8,7 @@ import Apologetic from "./components/posts/apologetic/Apologetic";
 import Supportive from "./components/posts/supportive/Supportive";
 import Boom from "./components/posts/boom/Boom";
 import CloudDetail from "./components/views/CloudPage/CloudDetail";
+import Footer from "./components/common/footer/Footer";
 import "./App.css";
 import styled from "styled-components";
 
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/boom" element={<Boom />} />
             <Route exact path="/cloud/:id" element={<CloudDetail />} />
           </Routes>
+          <Footer />
         </GlobalWrapper>
       </BrowserRouter>
     </div>

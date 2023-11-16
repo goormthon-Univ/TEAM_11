@@ -3,15 +3,24 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    height: 100vh;
 }
 
 .title-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    padding-top: 50px;
 }
 
-.design-title {}
+.title-container img {
+    position: absolute;
+    left: 40px;
+}
+
+.design-title {
+    font-weight: bold;
+    font-size: 3ch;
+}
 
 .customed-cloud {}
 
@@ -19,7 +28,7 @@
     width: 340px;
     height: 480px;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background-color: #FFFFFF;
     /* 배경색 설정 */
     border-radius: 15px;

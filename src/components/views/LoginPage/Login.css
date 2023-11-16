@@ -1,0 +1,15 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sentbycloud {
+    padding-top: 80px;
+}
+
+.lettercloud {}
+
+.memory-text {
+    padding-top: 10px;
+}

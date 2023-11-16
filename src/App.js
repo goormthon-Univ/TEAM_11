@@ -3,6 +3,7 @@ import Main from "./components/views/MainPage/Main";
 import Choicecloud from "./components/views/SetcloudPage/Choicecloud";
 import Specialcloud from "./components/views/SetcloudPage/Specialcloud";
 import Login from "./components/views/LoginPage/Login";
+import Designcloud from "./components/views/SetcloudPage/Designcloud";
 import Grateful from "./components/posts/grateful/Grateful";
 import Apologetic from "./components/posts/apologetic/Apologetic";
 import Boom from "./components/posts/boom/Boom";
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/choicecloud" element={<Choicecloud />} />
             <Route exact path="/specialcloud" element={<Specialcloud />} />
+            <Route exact path="/designcloud" element={<Designcloud />} />
             <Route exact path="/grateful" element={<Grateful />} />
             <Route exact path="/apologetic" element={<Apologetic />} />
             <Route exact path="/boom" element={<Boom />} />

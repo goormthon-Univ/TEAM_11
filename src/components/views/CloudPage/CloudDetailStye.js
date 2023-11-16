@@ -100,6 +100,46 @@ export const Delete = styled.div`
   line-height: normal;
   cursor: pointer;
 `;
+
+export const CommentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: 0 auto;
+`;
+export const CommentWrapper = styled.div`
+  position: relative;
+  width: 300px;
+  height: 212px;
+  &:nth-child(odd) {
+    margin-top: -160px;
+    margin-left: -100px;
+  }
+
+  &:nth-child(even) {
+    margin-top: -160px;
+    margin-right: -100px;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+`;
+export const Comment = styled.img``;
+export const commentContent = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  text-align: center;
+  font-family: Anek Devanagari;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+`;
+
 export const Modal = styled.div`
   width: 284px;
   height: 160px;

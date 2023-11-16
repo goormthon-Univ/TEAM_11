@@ -8,7 +8,7 @@ body {
   background-image: url("/public/img/main/background.png");
   background-size: cover;
   /* 화면을 완전히 채우도록 설정 */
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   /* overflow: hidden; */
   height: 100vh;

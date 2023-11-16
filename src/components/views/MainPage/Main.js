@@ -71,9 +71,8 @@ export default function Main() {
             {/* 편지가 없을 경우 여기에 렌더링할 내용 추가 */}
           </>
         )}
-        <div className="copylink_btn" onClick={handleButtonClick}>
-          <img src="/img/main/copylink_btn.png" alt="링크복사 버튼이미지" />
-        </div>
+        <button className="copylink_btn" onClick={handleButtonClick}>하늘 링크 복사하기
+        </button>
       </div>
       <div className="footer">
         <div className="copyright">

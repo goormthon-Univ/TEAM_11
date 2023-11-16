@@ -4,12 +4,18 @@
     justify-content: center;
 }
 
-.sentbycloud {
+.sentbycloud img {
     padding-top: 80px;
+    width: 287px;
+    height: 161px;
 }
 
-.lettercloud {}
+.lettercloud img {
+    width: 324px;
+    height: 272px;
+}
 
-.memory-text {
-    padding-top: 10px;
+.memory-text img {
+    width: 266px;
+    height: 36px;
 }

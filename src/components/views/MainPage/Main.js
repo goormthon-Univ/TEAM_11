@@ -79,8 +79,10 @@ export default function Main() {
         <div className="copyright">
           Copyright © 2023 구름이 전해주는 편지. All rights reserved.
         </div>
-        <div className="team-goormy">
-          구름이 전해주는 편지 소개 | 구루미 팀 소개
+        <div className="introduce">
+          <div className="introduce-app">
+            구름이 전해주는 편지 소개 </div>
+          <div className="introduce-team"> | 구루미 팀 소개</div>
         </div>
       </div>
     </div>

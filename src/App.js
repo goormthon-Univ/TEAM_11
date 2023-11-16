@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/views/MainPage/Main";
 import Choicecloud from "./components/views/SetcloudPage/Choicecloud";
 import Specialcloud from "./components/views/SetcloudPage/Specialcloud";
+import Login from "./components/views/LoginPage/Login";
 import Grateful from "./components/posts/grateful/Grateful";
 import Apologetic from "./components/posts/apologetic/Apologetic";
 import Supportive from "./components/posts/supportive/Supportive";
@@ -17,6 +18,7 @@ function App() {
         <GlobalWrapper>
           <Routes>
             <Route exact path="/" element={<Main />} />
+            <Route exact path="/login" element={<Login />} />
             <Route exact path="/choicecloud" element={<Choicecloud />} />
             <Route exact path="/specialcloud" element={<Specialcloud />} />
             <Route exact path="/grateful" element={<Grateful />} />

@@ -21,8 +21,10 @@
 .title img {
   padding-right: 80px;
 }
-d .cloud-box {
+
+.cloud-box {
   position: relative;
+  color: #000;
 }
 
 .selectgrateful {

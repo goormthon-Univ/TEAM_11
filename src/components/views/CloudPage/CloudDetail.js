@@ -26,7 +26,7 @@ export default function CloudDetail() {
         setCloudImg(apologeticImg);
         break;
       case "4":
-        setCloudImg(gratefulImg);
+        setCloudImg(supportiveImg);
         break;
       default:
         setCloudImg(boomImg);

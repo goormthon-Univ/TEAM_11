@@ -58,7 +58,6 @@
   bottom: 12%;
   /* 바닥으로부터 12% 위에 고정 */
   left: 50%;
-  /* 가운데 정렬을 위해 */
   transform: translateX(-50%);
   /* 가운데 정렬을 위해 */
   border: none;

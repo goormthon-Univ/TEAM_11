@@ -7,18 +7,20 @@ import supportiveImg from "./../../../images/cloud/supportiveCloud.svg";
 import boomImg from "./../../../images/cloud/boomCloud.svg";
 import tailCloud from "./../../../images/cloud/tailCloud.svg";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function CloudDetail() {
+  const { cloudType, cloudIdx } = useParams();
+  const params = useParams();
+  console.log(params);
   const [cloudImg, setCloudImg] = useState("");
   const [restTime, setRestTime] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comment, setComment] = useState("");
-  const data = {
-    cloudType: "3",
-    cloudIdx: "2",
-  };
+  const [cloud, setCloud] = useState("");
   useEffect(() => {
-    switch (data.cloudType) {
+    getClouds();
+    switch (cloudType) {
       case "1":
         setCloudImg(gratefulImg);
         break;
@@ -35,19 +37,18 @@ export default function CloudDetail() {
         setCloudImg(boomImg);
         break;
     }
-  }, [data.cloudType]);
-
-  const cloud = {
-    title: "정말 응원해요",
-    content: "응원구름 등록함",
-    createdAt: "2023-11-15T16:58:46.394013",
-    nickname: "응원함",
-    tailCloudContents: [
-      "일이삼사오육칠팔구십일이삼사오육칠팔구십",
-      "일이삼사오육칠팔구십일이삼사오육칠팔구십",
-      "일이삼사오육칠팔구십일이삼사오육칠팔구십",
-      "일이삼사오육칠팔구십일이삼사오육칠팔구십",
-    ],
+  }, [params.cloudType]);
+  const getClouds = async () => {
+    await axios
+      .get(`https://43.202.49.87:8080/clouds/${cloudType}/${cloudIdx}`)
+      .then((response) => {
+        setCloud(response.data);
+        console.log("성공");
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log("전체 글 불러오기 실패", error.message);
+      });
   };
   function formatDateTime(dateTimeString) {
     const date = new Date(dateTimeString);
@@ -112,8 +113,8 @@ export default function CloudDetail() {
     if (comment.trim() !== "") {
       e.preventDefault();
       axios
-        .post(`http://43.202.49.87:8080/clouds/supportive/tail`, {
-          cloudIdx: data.cloudIdx,
+        .post(`https://43.202.49.87:8080/clouds/supportive/tail`, {
+          cloudIdx: cloudIdx,
           content: comment,
         })
         .then((response) => {
@@ -121,7 +122,7 @@ export default function CloudDetail() {
           setComment("");
         })
         .catch((error) => {
-          console.log(data.cloudIdx, comment);
+          console.log(cloudIdx, comment);
           console.log("작성 실패", error.message);
         });
     } else {
@@ -132,7 +133,7 @@ export default function CloudDetail() {
   const deleteCloud = () => {
     axios
       .delete(
-        `https://43.202.49.87:8080/clouds/${data.cloudType}/${data.cloudIdx}`
+        `https://43.202.49.87:8080/clouds/${params.cloudType}/${params.cloudIdx}`
       )
       .then((response) => {
         console.log("구름 삭제 성공");
@@ -144,8 +145,8 @@ export default function CloudDetail() {
   };
   return (
     <>
-      <D.Title>00님의 {data.cloudIdx}번째 구름☁️</D.Title>
-      {data.cloudType === "5" && <D.BoomCount>💣{restTime}</D.BoomCount>}
+      <D.Title>00님의 {params.cloudIdx}번째 구름☁️</D.Title>
+      {cloudType === "5" && <D.BoomCount>💣{restTime}</D.BoomCount>}
       <D.Cloud src={cloudImg} />
       <D.CloudContainer>
         <D.Back src={postImg} />
@@ -160,7 +161,7 @@ export default function CloudDetail() {
           </D.CloudNameWrapper>
         </D.CloudWrapper>
       </D.CloudContainer>
-      {data.cloudType === "4" && (
+      {cloudType === "4" && (
         <D.CommentContainer>
           {cloud.tailCloudContents.map((tailContent, index) => (
             <D.CommentWrapper key={index}>
@@ -171,7 +172,7 @@ export default function CloudDetail() {
         </D.CommentContainer>
       )}
       <D.Delete onClick={goModal}>삭제하기</D.Delete>
-      {data.cloudType === "4" && (
+      {cloudType === "4" && (
         <D.CommentInputContainer>
           <D.CommentInput
             type="text"

@@ -28,7 +28,11 @@ function App() {
             <Route exact path="/apologetic" element={<Apologetic />} />
             <Route exact path="/supportive" element={<Supportive />} />
             <Route exact path="/boom" element={<Boom />} />
-            <Route exact path="/cloud/:id" element={<CloudDetail />} />
+            <Route
+              exact
+              path="/cloud/:cloudType/:cloudIdx"
+              element={<CloudDetail />}
+            />
           </Routes>
         </GlobalWrapper>
         <Footer />

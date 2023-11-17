@@ -1,0 +1,109 @@
+.design-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120vh;
+}
+
+.title-container {
+    display: flex;
+    /* align-items: center; */
+    /* padding-top: 50px; */
+
+}
+
+.design-title img {
+    padding-right: 80px;
+}
+
+.design-title {
+    padding-right: 80px;
+    padding-top: 50px;
+    font-weight: bold;
+    font-size: 3ch;
+}
+
+.customed-cloud img {
+    width: 314px;
+    height: 190px;
+}
+
+.design-board {
+    width: 340px;
+    height: 480px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+
+.custom-color,
+.custom-face,
+.custom-icon {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 20px;
+}
+
+.color-text,
+.face-text,
+.icon-text {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.colorpalette-container,
+.facepalette-container,
+.iconpalette-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-x: auto;
+    /* 가로 스크롤을 가능하게 함 */
+    white-space: nowrap;
+    /* 자식 요소들이 한 줄에 표시되도록 함 */
+}
+
+.facepalette-container::-webkit-scrollbar {
+    display: none;
+    /* 스크롤바 감추기 */
+}
+
+.colorpalette-container::-webkit-scrollbar {
+    display: none;
+    /* 스크롤바 감추기 */
+}
+
+.iconpalette-container::-webkit-scrollbar {
+    display: none;
+    /* 스크롤바 감추기 */
+}
+
+.palette-detail img {
+    padding-left: 10px;
+    width: 90px;
+    height: 90px;
+}
+
+
+.face-palette {}
+
+.icon-palette {}
+
+.custom-complete {
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 340px;
+    height: 57px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}

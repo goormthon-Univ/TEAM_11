@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 export default function Main() {
   const [hasLetter, setHasLetter] = useState(false);
 
+  /* 로그인 안된경우/로그인 된 경우 */
   const updateCloud = async () => {
     try {
       // 백엔드에서 편지 여부 확인
@@ -63,17 +64,13 @@ export default function Main() {
         {hasLetter ? (
           <div className="clouds">나중에 구름띄우기 로직 구현</div>
         ) : (
-          <>
-            <div className="noclouds">
-              <img src="/img/main/cryingcloud.png"></img>
-              <div className="noclouds-message">아직 구름이 없어요ㅠ.ㅠ</div>
-            </div>
-            {/* 편지가 없을 경우 여기에 렌더링할 내용 추가 */}
-          </>
+          <div className="noclouds">
+            <img src="/img/main/cryingcloud.png"></img>
+            <div className="noclouds-message">아직 구름이 없어요ㅠ.ㅠ</div>
+          </div>
         )}
-        <div className="copylink_btn" onClick={handleButtonClick}>
-          <img src="/img/main/copylink_btn.png" alt="링크복사 버튼이미지" />
-        </div>
+        <button className="copylink_btn" onClick={handleButtonClick}>하늘 링크 복사하기
+        </button>
       </div>
     </div>
   );

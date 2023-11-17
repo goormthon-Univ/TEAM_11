@@ -2,14 +2,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100vh;
 }
 
-.sentbycloud {
-    padding-top: 80px;
+.sentbycloud img {
+    width: 287px;
+    height: 161px;
 }
 
-.lettercloud {}
+.lettercloud img {
+    width: 324px;
+    height: 272px;
+}
 
-.memory-text {
+.memory-text img {
+    width: 266px;
+    height: 36px;
+}
+
+.loginbtn img {
     padding-top: 10px;
+    width: 349px;
+    height: 64px;
 }

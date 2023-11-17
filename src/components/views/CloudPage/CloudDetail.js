@@ -14,8 +14,8 @@ export default function CloudDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comment, setComment] = useState("");
   const data = {
-    cloudType: "4",
-    cloudIdx: "1",
+    cloudType: "3",
+    cloudIdx: "2",
   };
   useEffect(() => {
     switch (data.cloudType) {
@@ -132,7 +132,7 @@ export default function CloudDetail() {
   const deleteCloud = () => {
     axios
       .delete(
-        `http://43.202.49.87:8080/clouds/${data.cloudType}/${data.cloudIdx}`
+        `https://43.202.49.87:8080/clouds/${data.cloudType}/${data.cloudIdx}`
       )
       .then((response) => {
         console.log("구름 삭제 성공");

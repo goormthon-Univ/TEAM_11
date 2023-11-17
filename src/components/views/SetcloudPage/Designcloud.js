@@ -1,6 +1,10 @@
 import React from 'react'
 import './Designcloud.css'
+<<<<<<< HEAD
 import { useState } from 'react';
+=======
+import axios from "axios";
+>>>>>>> e6f49dee5b5c7349a5f011fff4e1b695929c10fe
 
 export default function Designcloud() {
     const [selectedColor, setSelectedColor] = useState('/img/designcloud/default_cloud.png');

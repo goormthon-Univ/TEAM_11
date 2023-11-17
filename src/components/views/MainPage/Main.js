@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 
 export default function Main() {
   const [hasLetter, setHasLetter] = useState(false);
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
   const [userId, setUserId] = useState(null);
-  const [isOwner, setIsOwner] = useState(false);
+  const [isOwner, setIsOwner] = useState(true);
 
   /*  useEffect(() => {
      // 컴포넌트가 마운트될 때 로그인 상태를 가져옴

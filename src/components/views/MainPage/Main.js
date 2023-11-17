@@ -1,10 +1,11 @@
 import React from "react";
 import "./Main.css";
+import Clouds from "./Clouds";
 import { useState, useEffect } from "react";
 //import axios from 'axios';
 
 export default function Main() {
-  const [hasLetter, setHasLetter] = useState(false);
+  const [hasLetter, setHasLetter] = useState(true);
   const [isLoggedIn, setLoggedIn] = useState(true);
   const [userId, setUserId] = useState(null);
   const [isOwner, setIsOwner] = useState(true);
@@ -84,7 +85,7 @@ export default function Main() {
       </div>
       <div className="middle-container">
         {hasLetter ? (
-          <div className="clouds">나중에 구름띄우기 로직 구현</div>
+          <Clouds />
         ) : (
           <div className="noclouds">
             <img src="/img/main/cryingcloud.png"></img>

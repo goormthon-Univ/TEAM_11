@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import titleImg from "./../../../images/post/title.svg";
+import contentImg from "./../../../images/post/longContent.svg";
+import nameImg from "./../../..//images/post/name.svg";
 
 export const Title = styled.p`
   color: #000;
@@ -7,7 +10,6 @@ export const Title = styled.p`
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-
   text-align: left;
   margin: 29px 0 0 27px;
 `;
@@ -19,34 +21,77 @@ export const BoomCount = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 36px;
+  top: 145px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
 `;
 export const Cloud = styled.img`
   width: 350px;
   margin: 0;
 `;
+export const CloudContainer = styled.div`
+  position: relative;
+  width: 360px;
+  margin: 0 auto;
+  margin-top: -125px;
+`;
+export const Back = styled.img`
+  width: 360px;
+  margin: 0 auto;
+`;
 export const CloudWrapper = styled.div`
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 353px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  justify-content: center;
+  gap: 0;
 `;
 export const CloudTitle = styled.div`
-  width: 239px;
-  height: 59px;
+  width: 310px;
+  height: 53px;
   border: none;
-  resize: none;
   color: #000;
   font-family: Anek Devanagari;
   font-size: 15px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+  background: none;
+  background-image: url(${titleImg});
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 16px 20px;
   text-align: left;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #000;
+  }
+`;
+export const ContentWrapper = styled.div`
+  width: 310px;
+  height: 395px;
+  padding: 40px 20px;
+  background-image: url(${contentImg});
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  margin: 0;
+  margin-top: -10px;
 `;
 export const CloudContent = styled.div`
-  width: 239px;
-  height: 304px;
+  width: 100%;
+  height: 100%;
   border: none;
   resize: none;
   color: #000;
@@ -55,12 +100,50 @@ export const CloudContent = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  background: none;
+  box-sizing: border-box;
   text-align: left;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-scrollbar {
+    width: 8px; /* 스크롤바의 두께 지정 */
+    border-radius: 5px; /* 스크롤바 모서리를 둥글게 만듭니다. */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f7fefe; /* 스크롤바 트랙 색상 지정 */
+    border-radius: 5px; /* 스크롤바 모서리를 둥글게 만듭니다. */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2) inset;
+  }
 `;
 export const CloudNameWrapper = styled.div`
-  width: 239px;
+  width: 310px;
+  height: 51px;
+  border: none;
+  resize: none;
+  color: #000;
+  font-family: Anek Devanagari;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: none;
+  background-image: url(${nameImg});
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  margin-top: -20px;
   display: flex;
   justify-content: space-between;
+  align-items: start;
 `;
 export const CloudDate = styled.p`
   color: #000;
@@ -70,6 +153,7 @@ export const CloudDate = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: -10px;
 `;
 
 export const CloudName = styled.p`
@@ -80,6 +164,7 @@ export const CloudName = styled.p`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-top: -10px;
 `;
 
 export const Delete = styled.div`
@@ -90,7 +175,7 @@ export const Delete = styled.div`
   align-items: center;
   border-radius: 30px;
   background: #fff;
-  margin: 24px auto;
+  margin: 0 auto;
   color: #000;
   text-align: center;
   font-family: Anek Devanagari;
@@ -107,6 +192,8 @@ export const CommentContainer = styled.div`
   align-items: center;
   justify-content: start;
   margin: 0 auto;
+  margin-top: -50px;
+  overflow-x: hidden;
 `;
 export const CommentWrapper = styled.div`
   position: relative;
@@ -143,7 +230,7 @@ export const commentContent = styled.div`
 export const Modal = styled.div`
   width: 284px;
   height: 160px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   margin: -80px 0 0 -142px;
@@ -157,10 +244,11 @@ export const Modal = styled.div`
 `;
 
 export const CommentInputContainer = styled.div`
+  width: 310px;
   background: #fff; // 배경색은 흰색
   padding: 10px; // 패딩
   border-radius: 20px; // 테두리 둥글게
-  margin: 20px; // 마진
+  margin: 20px auto; // 마진
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); // 그림자 효과
   display: flex;
   align-items: center;
@@ -177,6 +265,7 @@ export const CommentInput = styled.input`
 export const CommentSubmit = styled.div`
   width: 100px;
   color: #227afd;
+  cursor: pointer;
 `;
 export const ModalTitle = styled.h1`
   color: #000;

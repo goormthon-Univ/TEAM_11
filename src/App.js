@@ -37,10 +37,10 @@ function App() {
   );
 }
 const GlobalWrapper = styled.div`
-  background-image: url("/public/img/main/background.png");
+  // background-image: url("/public/img/main/background.png");
   @media (min-width: 768px) {
     margin: 0 auto;
-    width: 375px !important;
+    width: 390px !important;
   }
 `;
 export default App;

@@ -29,7 +29,7 @@ export default function Apologetic() {
     if (inputText.trim() !== "" && name.trim() !== "") {
       e.preventDefault();
       axios
-        .post(`http://43.202.49.87:8080/clouds/apologetic`, {
+        .post(`https://43.202.49.87:8080/clouds/apologetic`, {
           cloudOwner: "kms02171@naver.com", // 하늘 소유자 id
           title: title,
           nickname: name,

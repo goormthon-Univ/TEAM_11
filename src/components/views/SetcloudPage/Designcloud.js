@@ -23,6 +23,9 @@ export default function Designcloud() {
                     <div className='facepalette-container'>
                         <div className='palette-detail'><img src='/img/designcloud/default_face.png' alt='default_face'></img></div>
                         <div className='palette-detail'><img src='/img/designcloud/sad_face.png' alt='sadface'></img></div>
+                        <div className='palette-detail'><img src='/img/designcloud/smile_face.png' alt='sadface'></img></div>
+                        <div className='palette-detail'><img src='/img/designcloud/wink_face.png' alt='sadface'></img></div>
+                        <div className='palette-detail'><img src='/img/designcloud/surprised_face.png' alt='sadface'></img></div>
                     </div>
 
                 </div>

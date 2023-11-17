@@ -20,13 +20,15 @@ export default function Designcloud() {
                 </div>
                 <div className='custom-face'>
                     <div className='face-text'>구름 표정 선택</div>
-                    <div className='facepalette-container'><div className='face-palette'></div></div>
+                    <div className='facepalette-container'>
+                        <div className='palette-detail'><img src='/img/designcloud/default_face.png' alt='default_face'></img></div>
+                        <div className='palette-detail'><img src='/img/designcloud/sad_face.png' alt='sadface'></img></div>
+                    </div>
 
                 </div>
                 <div className='custom-icon'>
                     <div className='icon-text'>아이콘 선택</div>
                     <div className='iconpalette-container'><div className='icon-palette'></div></div>
-
                 </div>
             </div>
             <button className='custom-complete'>구름 완성</button>

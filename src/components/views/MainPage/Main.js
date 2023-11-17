@@ -5,8 +5,30 @@ import { useState, useEffect } from "react";
 
 export default function Main() {
   const [hasLetter, setHasLetter] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  const [userId, setUserId] = useState(null);
+  const [isOwner, setIsOwner] = useState(true);
 
-  /* 로그인 안된경우/로그인 된 경우 */
+  /*  useEffect(() => {
+     // 컴포넌트가 마운트될 때 로그인 상태를 가져옴
+     checkLoginStatus();
+   }, []); */
+
+  /* const checkLoginStatus = async () => {
+    try {
+      // windowlocation으로 userid받아와서 검증된 사용자인지 비교?
+      const response = await fetch('/api/');
+      const data = await response.json();
+      const owner = data.userId && window.location.pathname.startsWith(`/clouds/${data.userId}`);
+
+      setLoggedIn(data.isLoggedIn);
+      setUserId(data.userId);
+      setIsOwner(owner);
+    } catch (error) {
+      console.error('로그인 상태 확인 중 에러:', error);
+    }
+  }; */
+
   const updateCloud = async () => {
     try {
       // 백엔드에서 편지 여부 확인
@@ -69,8 +91,18 @@ export default function Main() {
             <div className="noclouds-message">아직 구름이 없어요ㅠ.ㅠ</div>
           </div>
         )}
-        <button className="copylink_btn" onClick={handleButtonClick}>하늘 링크 복사하기
-        </button>
+        {isLoggedIn && isOwner ? (
+          // 현재 사용자가 페이지의 소유자인 경우
+          <button className="copylink_btn" onClick={handleButtonClick}>
+            하늘 링크 복사하기
+          </button>
+        ) : (
+          // 그 외의 경우
+          <div className="notAuthorized">
+            <button className="movetologin">로그인하기</button>
+            <button className="post-cloud">구름 띄우기</button>
+          </div>
+        )}
       </div>
     </div>
   );

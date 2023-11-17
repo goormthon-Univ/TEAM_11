@@ -9,7 +9,11 @@ export default function Main() {
   const [isLoggedIn, setLoggedIn] = useState(true);
   const [userId, setUserId] = useState(null);
   const [isOwner, setIsOwner] = useState(true);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
   /*  useEffect(() => {
      // 컴포넌트가 마운트될 때 로그인 상태를 가져옴
      checkLoginStatus();
@@ -69,6 +73,7 @@ export default function Main() {
     });
   };
 
+
   useEffect(() => {
     // 컴포넌트가 마운트될 때 updateCloud 호출
     updateCloud();
@@ -80,8 +85,14 @@ export default function Main() {
         <div className="status">00님의 하늘</div>
         <div className="message-count">N개의 구름이 도착했어요!</div>
       </div>
-      <div className="navbar">
-        <img src="/img/main/navbar.png" alt="네비게이션바" />
+      <div className="drop-down">
+        <img src="/img/main/drop_down.png" alt="드롭다운버튼" onClick={toggleDropdown} />
+        {dropdownOpen && (
+          <div className="dropdown-menu">
+            <button>로그아웃</button>
+            <button>회원탈퇴</button>
+          </div>
+        )}
       </div>
       <div className="middle-container">
         {hasLetter ? (

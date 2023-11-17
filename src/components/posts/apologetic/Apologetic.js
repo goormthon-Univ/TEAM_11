@@ -1,5 +1,6 @@
 import * as G from "./../../common/CloudStyle";
 import gratefulCloud from "./../../../images/cloud/apologeticCloud.svg";
+import postImg from "./../../../images/post/longPost.svg";
 import { useState } from "react";
 import axios from "axios";
 
@@ -56,25 +57,30 @@ export default function Apologetic() {
         솔직한 마음을 전해 보세요 💌
       </G.Info>
       <G.Cloud src={gratefulCloud} />
-      <G.InputWrapper>
-        <G.InputTitle
-          type="text"
-          placeholder="제목을 입력해주세요."
-          value={title}
-          onChange={handleTitleChange}
-        />
-        <G.InputContent
-          placeholder="내용을 입력하세요."
-          value={inputText}
-          onChange={handleInputChange}
-        />
-        <G.InputName
-          type="text"
-          placeholder="작성자 닉네임(5글자 이내)"
-          value={name}
-          onChange={handleNameChange}
-        />
-      </G.InputWrapper>
+      <G.InputContainer>
+        <G.InputBack src={postImg} />
+        <G.InputWrapper>
+          <G.InputTitle
+            type="text"
+            placeholder="제목을 입력해주세요."
+            value={title}
+            onChange={handleTitleChange}
+          />
+          <G.InputContentWrapper>
+            <G.InputContent
+              placeholder="내용을 입력하세요."
+              value={inputText}
+              onChange={handleInputChange}
+            />
+          </G.InputContentWrapper>
+          <G.InputName
+            type="text"
+            placeholder="작성자 닉네임(5글자 이내)"
+            value={name}
+            onChange={handleNameChange}
+          />
+        </G.InputWrapper>
+      </G.InputContainer>
       <G.SubmitWrapper>
         <G.Cancel>취소하기</G.Cancel>
         <G.Submit onClick={CloudSubmit}>등록하기</G.Submit>

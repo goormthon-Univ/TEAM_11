@@ -30,14 +30,14 @@ function App() {
             <Route exact path="/boom" element={<Boom />} />
             <Route exact path="/cloud/:id" element={<CloudDetail />} />
           </Routes>
-          <Footer />
         </GlobalWrapper>
+        <Footer />
       </BrowserRouter>
     </div>
   );
 }
 const GlobalWrapper = styled.div`
-  // background-image: url("/public/img/main/background.png");
+  background-image: url("/public/img/main/background.png");
   @media (min-width: 768px) {
     margin: 0 auto;
     width: 375px !important;

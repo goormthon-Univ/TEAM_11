@@ -1,11 +1,9 @@
 import React from 'react'
 import './Login.css'
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const handleLogin = async () => {
-        const navigate = useNavigate();
         try {
             // OAuth2 로그인을 위한 API 경로
             const oauthApiPath = 'https://43.202.49.87:8080/users/oauth2/kakao';
@@ -15,7 +13,6 @@ export default function Login() {
 
             // 백엔드로부터의 응답 확인
             console.log('로그인 응답:', response.data);
-            navigate("/")
 
             // 추가적인 로직수행..할거있으면 추가하기
         } catch (error) {

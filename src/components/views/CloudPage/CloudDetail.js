@@ -14,8 +14,8 @@ export default function CloudDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comment, setComment] = useState("");
   const data = {
-    cloudType: "4",
-    cloudIdx: "1",
+    cloudType: "3",
+    cloudIdx: "2",
   };
   useEffect(() => {
     switch (data.cloudType) {

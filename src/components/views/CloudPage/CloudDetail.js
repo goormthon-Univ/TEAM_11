@@ -55,6 +55,7 @@ export default function CloudDetail() {
       .replace(/\. /g, ".");
   }
   const formattedDateTime = formatDateTime(cloud.createdAt);
+
   useEffect(() => {
     const endTime = new Date(cloud.createdAt);
     endTime.setHours(endTime.getHours() + 24);
@@ -119,7 +120,15 @@ export default function CloudDetail() {
         </D.CommentContainer>
       )}
       <D.Delete onClick={goModal}>삭제하기</D.Delete>
-
+      {data.cloudType === "4" && (
+        <D.CommentInputContainer>
+          <D.CommentInput
+            type="text"
+            placeholder="꼬리 구름 내용 작성(20글자 이내)"
+          />
+          <D.CommentSubmit>등록</D.CommentSubmit>
+        </D.CommentInputContainer>
+      )}
       {isModalOpen && (
         <D.Modal>
           <D.ModalTitle>삭제하시겠습니까?</D.ModalTitle>

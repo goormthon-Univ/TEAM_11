@@ -1,5 +1,7 @@
 import * as G from "./../../common/CloudStyle";
 import gratefulCloud from "./../../../images/cloud/gratefulCloud.svg";
+import postImg from "./../../../images/post/longPost.svg";
+import cloudHands from "./../../../images/post/cloudHands.svg";
 import { useState } from "react";
 import axios from "axios";
 
@@ -28,11 +30,11 @@ export default function Grateful() {
     if (inputText.trim() !== "" && name.trim() !== "") {
       e.preventDefault();
       axios
-        .post(``, {
+        .post(`http://localhost:8080/test/clouds/grateful`, {
           cloudOwner: "kms02171@naver.com", // 하늘 소유자 id
           title: title,
-          nickname: name,
           content: inputText,
+          nickname: name,
         })
         .then((response) => {
           console.log("작성 성공");
@@ -56,25 +58,31 @@ export default function Grateful() {
         고마운 마음을 전해 보세요 💌
       </G.Info>
       <G.Cloud src={gratefulCloud} />
-      <G.InputWrapper>
-        <G.InputTitle
-          type="text"
-          placeholder="제목을 입력해주세요."
-          value={title}
-          onChange={handleTitleChange}
-        />
-        <G.InputContent
-          placeholder="내용을 입력하세요."
-          value={inputText}
-          onChange={handleInputChange}
-        />
-        <G.InputName
-          type="text"
-          placeholder="작성자 닉네임(5글자 이내)"
-          value={name}
-          onChange={handleNameChange}
-        />
-      </G.InputWrapper>
+      <G.Cloudhand src={cloudHands} />
+      <G.InputContainer>
+        <G.InputBack src={postImg} />
+        <G.InputWrapper>
+          <G.InputTitle
+            type="text"
+            placeholder="제목을 입력해주세요."
+            value={title}
+            onChange={handleTitleChange}
+          />
+          <G.InputContentWrapper>
+            <G.InputContent
+              placeholder="내용을 입력하세요."
+              value={inputText}
+              onChange={handleInputChange}
+            />
+          </G.InputContentWrapper>
+          <G.InputName
+            type="text"
+            placeholder="작성자 닉네임(5글자 이내)"
+            value={name}
+            onChange={handleNameChange}
+          />
+        </G.InputWrapper>
+      </G.InputContainer>
       <G.SubmitWrapper>
         <G.Cancel>취소하기</G.Cancel>
         <G.Submit onClick={CloudSubmit}>등록하기</G.Submit>

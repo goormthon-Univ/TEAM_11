@@ -155,6 +155,29 @@ export const Modal = styled.div`
   gap: 8px;
   z-index: 20;
 `;
+
+export const CommentInputContainer = styled.div`
+  background: #fff; // 배경색은 흰색
+  padding: 10px; // 패딩
+  border-radius: 20px; // 테두리 둥글게
+  margin: 20px; // 마진
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); // 그림자 효과
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+// 입력창 스타일링
+export const CommentInput = styled.input`
+  width: 100%; // 너비 100%
+  border: none; // 테두리 없음
+  outline: none; // 선택됐을 때 테두리 없음
+  padding: 8px; // 패딩
+`;
+export const CommentSubmit = styled.div`
+  width: 100px;
+  color: #227afd;
+`;
 export const ModalTitle = styled.h1`
   color: #000;
   text-align: center;

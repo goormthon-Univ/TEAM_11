@@ -23,9 +23,32 @@
     font-size: 3ch;
 }
 
-.customed-cloud img {
-    width: 314px;
-    height: 190px;
+.customed-cloud {
+    position: relative;
+}
+
+.cloud-image {
+    width: 351px;
+    height: 290px;
+    position: relative;
+}
+
+.face-image {
+    width: 52px;
+    height: 39px;
+    position: absolute;
+    left: 40%;
+    bottom: 45%;
+    z-index: 1;
+}
+
+.icon-image {
+    width: 165px;
+    height: 110px;
+    position: absolute;
+    left: 25%;
+    bottom: 25%;
+    z-index: 1;
 }
 
 .design-board {

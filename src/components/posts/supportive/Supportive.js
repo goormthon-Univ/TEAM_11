@@ -29,7 +29,7 @@ export default function Grateful() {
     if (inputText.trim() !== "" && name.trim() !== "") {
       e.preventDefault();
       axios
-        .post(``, {
+        .post(`http://43.202.49.87:8080/clouds/supportive`, {
           cloudOwner: "kms02171@naver.com", // 하늘 소유자 id
           title: title,
           nickname: name,

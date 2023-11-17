@@ -112,6 +112,12 @@
     height: 90px;
 }
 
+.palette-detail.selected img {
+    /* 선택된 이미지 스타일 */
+    opacity: 0.5;
+    /* 흐려진 효과 */
+}
+
 
 .face-palette {}
 

@@ -2,29 +2,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 120vh;
 }
 
 .title-container {
     display: flex;
-    align-items: center;
-    padding-top: 50px;
+    /* align-items: center; */
+    /* padding-top: 50px; */
+
 }
 
-.title-container img {}
+.design-title img {
+    padding-right: 80px;
+}
 
 .design-title {
+    padding-right: 80px;
+    padding-top: 50px;
     font-weight: bold;
     font-size: 3ch;
 }
 
-.customed-cloud {}
+.customed-cloud img {
+    width: 314px;
+    height: 190px;
+}
 
 .design-board {
     width: 340px;
     height: 480px;
-    margin-top: 20px;
-    margin-bottom: 30px;
     background-color: #FFFFFF;
     border-radius: 15px;
     display: flex;
@@ -50,23 +56,31 @@
 }
 
 .colorpalette-container,
-.facepalette-container {
+.facepalette-container,
+.iconpalette-container {
     display: flex;
     flex-direction: row;
     padding-top: 10px;
     padding-bottom: 10px;
+    overflow-x: auto;
+    /* 가로 스크롤을 가능하게 함 */
+    white-space: nowrap;
+    /* 자식 요소들이 한 줄에 표시되도록 함 */
 }
 
-.yellow-palette {
-    width: 90px;
-    height: 90px;
-    background-color: #FFFDED;
+.facepalette-container::-webkit-scrollbar {
+    display: none;
+    /* 스크롤바 감추기 */
 }
 
-.pink-palette {
-    width: 90px;
-    height: 90px;
-    background-color: #FFF0FB;
+.colorpalette-container::-webkit-scrollbar {
+    display: none;
+    /* 스크롤바 감추기 */
+}
+
+.iconpalette-container::-webkit-scrollbar {
+    display: none;
+    /* 스크롤바 감추기 */
 }
 
 .palette-detail img {
@@ -81,6 +95,7 @@
 .icon-palette {}
 
 .custom-complete {
+    margin-top: 10px;
     padding: 10px 20px;
     width: 340px;
     height: 57px;

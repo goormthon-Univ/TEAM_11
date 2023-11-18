@@ -7,6 +7,9 @@ export default function Grateful() {
   const handleButtonClick = () => {
     navigate("/teamabout");
   };
+  const handleServiceClick = () => {
+    navigate("/serviceabout");
+  };
 
   return (
     <>
@@ -15,7 +18,7 @@ export default function Grateful() {
           Copyright © 2023 구름이 전해주는 편지. All rights reserved.
         </F.Copyright>
         <F.Introduce>
-          <F.Link onClick={handleButtonClick}>
+          <F.Link onClick={handleServiceClick}>
             <F.Text>구름이 전해주는 편지 소개</F.Text>
           </F.Link>
           <F.Text>|</F.Text>

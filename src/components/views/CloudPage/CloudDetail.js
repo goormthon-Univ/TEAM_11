@@ -145,6 +145,7 @@ export default function CloudDetail() {
       )
       .then((response) => {
         console.log("구름 삭제 성공");
+        window.location.href = `/main/${response.data.userId}`;
       })
       .catch((error) => {
         console.error("구름 삭제 실패", error.message);

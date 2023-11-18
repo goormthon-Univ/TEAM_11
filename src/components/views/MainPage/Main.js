@@ -111,8 +111,8 @@ export default function Main() {
         ) : (
           // 그 외의 경우
           <div className="notAuthorized">
-            <button className="movetologin">로그인하기</button>
-            <button className="post-cloud">구름 띄우기</button>
+            <button className="movetologin">하늘 채워주기</button>
+            <button className="post-cloud">나도 하늘 만들기</button>
           </div>
         )}
       </div>

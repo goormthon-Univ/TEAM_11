@@ -17,17 +17,19 @@ export default function Login() {
     try {
       const response = await axios.post(
         "https://43.202.49.87:8080/user/login",
-        {
-          userId: loginInfo.userId,
-          password: loginInfo.password,
-        }
+        loginInfo
       );
       console.log(response);
-      alert("로그인 성공");
-      // 여기에 로그인 성공 후 로직 추가 (예: 메인 페이지로 리디렉션)
+      if (response.data.message === "로그인이 정상적으로 완료되었습니다.") {
+        localStorage.setItem("userId", response.data.userId);
+        localStorage.setItem("isLoggedIn", "true");
+        window.location.href = `/${response.data.userId}`;
+      } else {
+        alert("로그인 실패: " + response.data.message);
+      }
     } catch (error) {
       console.error(error);
-      alert("로그인 실패");
+      alert("로그인 실패: 서버 에러");
     }
   };
 
@@ -40,7 +42,7 @@ export default function Login() {
         onChange={handleChange}
       />
       <L.PW
-        type="password" // 비밀번호는 type을 "password"로 설정하여 보안 유지
+        type="password"
         name="password"
         placeholder="PW"
         onChange={handleChange}

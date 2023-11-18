@@ -27,26 +27,24 @@
 }
 
 .cloud-image {
-    width: 351px;
-    height: 290px;
+    width: 276px;
+    height: 204px;
     position: relative;
 }
 
 .face-image {
-    width: 52px;
-    height: 39px;
+    width: 130px;
+    height: 115px;
     position: absolute;
-    left: 40%;
-    bottom: 45%;
+    left: 28%;
+    bottom: 30%;
     z-index: 1;
 }
 
 .icon-image {
-    width: 165px;
-    height: 110px;
+    width: 360px;
+    height: 343px;
     position: absolute;
-    left: 25%;
-    bottom: 25%;
     z-index: 1;
 }
 

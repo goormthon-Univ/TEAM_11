@@ -19,6 +19,9 @@ export default function Login() {
       <div className="memory-text">
         <img src="/img/login/memory_text.png" alt="추억텍스트" />
       </div>
+      <div className="loginbtn" onClick={handleOAuthKakao}>
+        <img src="/img/login/loginbtn.png" alt="카카오톡로그인" />
+      </div>
     </div>
   );
 }

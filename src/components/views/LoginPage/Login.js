@@ -9,28 +9,24 @@ export default function Login() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const handleOAuthKakao = async (code) => {
+    const handleOAuthKakao = async () => {
         try {
-            window.location.href = 'https://43.202.49.87:8080/oauth/kakao';
+            const searchParams = new URLSearchParams(window.location.search);
+            const code = searchParams.get('code');
+
             // 카카오로부터 받아온 code를 서버에 전달하여 카카오로 회원가입 & 로그인한다
             const response = await axios.get(`https://43.202.49.87:8080/oauth/login/kakao?code=${code}`);
             const data = response.data; // 응답 데이터
             alert("로그인 성공: " + data);
-            navigate("/main");
-            console.log(code)
+            navigate("/");
         } catch (error) {
             console.log("로그인 에러:", error);
         }
     };
 
     useEffect(() => {
-        const searchParams = new URLSearchParams(location.search);
-        const code = searchParams.get('code');  // 카카오는 Redirect 시키면서 code를 쿼리 스트링으로 준다.
-        if (code) {
-            console.log("CODE = " + code);
-            handleOAuthKakao(code);
-        }
-    }, [location]);
+        handleOAuthKakao();
+    }, []); // 코드를 한 번만 처리하도록 빈 의존성 배열을 전달합니다.
 
     return (
         <div className='login-container'>

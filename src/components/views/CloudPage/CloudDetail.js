@@ -12,7 +12,6 @@ import { useParams } from "react-router-dom";
 export default function CloudDetail() {
   const { cloudType, cloudIdx } = useParams();
   const params = useParams();
-  console.log(params);
   const [cloudImg, setCloudImg] = useState("");
   const [restTime, setRestTime] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,7 +36,7 @@ export default function CloudDetail() {
         setCloudImg(boomImg);
         break;
     }
-  }, [params.cloudType]);
+  }, []);
   const getClouds = async () => {
     await axios
       .get(`https://43.202.49.87:8080/clouds/${cloudType}/${cloudIdx}`)
@@ -146,7 +145,7 @@ export default function CloudDetail() {
   return (
     <>
       <D.Title>00님의 {params.cloudIdx}번째 구름☁️</D.Title>
-      {cloudType === "5" && <D.BoomCount>💣{restTime}</D.BoomCount>}
+      {cloudType === "5" && cloud && <D.BoomCount>💣{restTime}</D.BoomCount>}
       <D.Cloud src={cloudImg} />
       <D.CloudContainer>
         <D.Back src={postImg} />
@@ -161,7 +160,7 @@ export default function CloudDetail() {
           </D.CloudNameWrapper>
         </D.CloudWrapper>
       </D.CloudContainer>
-      {cloudType === "4" && (
+      {cloudType === "4" && cloud && (
         <D.CommentContainer>
           {cloud.tailCloudContents.map((tailContent, index) => (
             <D.CommentWrapper key={index}>

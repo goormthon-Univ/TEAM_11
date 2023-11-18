@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const SignupContainer = styled.div`
-  margin: 0 auto;
+  position: relative;
 `;
 export const Prev = styled.img``;
 export const Title = styled.div`
-  color: #fff;
+  color: #448af7;
   text-align: center;
   font-family: Inter;
   font-size: 25px;
@@ -15,12 +15,12 @@ export const Title = styled.div`
 export const SignupWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   margin: 20px auto;
   gap: 10px;
 `;
-export const SubT = styled.p`
-  color: #ececec;
+export const SubT = styled.div`
+  color: #448af7;
   font-family: Inter;
   font-size: 18px;
   font-style: normal;

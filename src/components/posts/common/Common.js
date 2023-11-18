@@ -39,7 +39,7 @@ export default function Boom() {
       e.preventDefault();
       axios
         .post(`https://43.202.49.87:8080/clouds/common`, {
-          cloudOwner: "kms02171@naver.com", // 하늘 소유자 id
+          userId: "kms02171@naver.com", // 하늘 소유자 id
           title: title,
           nickname: name,
           content: inputText,

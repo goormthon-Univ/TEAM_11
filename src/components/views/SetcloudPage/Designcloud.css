@@ -45,7 +45,9 @@
     width: 360px;
     height: 343px;
     position: absolute;
-    z-index: 1;
+    left: -15%;
+    bottom: -30%;
+    z-index: -1;
 }
 
 .design-board {
@@ -55,6 +57,7 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    z-index: -2;
     /* justify-content: space-evenly; */
 }
 

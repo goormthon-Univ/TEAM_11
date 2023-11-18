@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as D from "./DesignCloudStyle";
 
-export default function Designcloud({ color, emotion }) {
+export default function Designcloud({ color, emotion, width }) {
   const [body, setBody] = useState("");
   const [face, setFace] = useState("");
 
@@ -10,7 +10,7 @@ export default function Designcloud({ color, emotion }) {
     mint: process.env.PUBLIC_URL + "/img/designcloud/mint_cloud.png",
     orange: process.env.PUBLIC_URL + "/img/designcloud/orange_cloud.png",
     pink: process.env.PUBLIC_URL + "/img/designcloud/pink_cloud.png",
-    purple: process.env.PUBLIC_URL + "/img/designcloud/purple_cloud.png",
+    blue: process.env.PUBLIC_URL + "/img/designcloud/purple_cloud.png",
   };
   const emotions = {
     1: process.env.PUBLIC_URL + "/img/designcloud/default_face.png", // 파일명이 올바른지 확인하세요.
@@ -24,13 +24,13 @@ export default function Designcloud({ color, emotion }) {
     console.log(color, emotion);
     const newBody = colors[color] || colors.white;
     setBody(newBody);
-    const newFace = emotions[emotion];
+    const newFace = emotions[3];
     setFace(newFace);
   }, [color, emotion]);
   return (
     <>
       <D.CloudWrapper>
-        <D.CloudBody src={body} />
+        <D.CloudBody src={body} width={width} />
         <D.CloudFace src={face} />
       </D.CloudWrapper>
     </>

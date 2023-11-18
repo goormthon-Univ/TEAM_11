@@ -26,21 +26,25 @@ export const CloudWrapper = styled.div`
   margin-top: 100px;
   overflow-x: hidden;
   width: 100%;
+  & > .cloud-item {
+    margin-top: -50px;
+
+    &:nth-child(odd) {
+      margin-left: -150px;
+    }
+
+    &:nth-child(even) {
+      margin-right: -150px;
+    }
+
+    &:first-child {
+      margin-top: 30px;
+    }
+  }
 `;
 export const Cloud = styled.img`
   width: 155px;
-  margin-top: -50px;
-  &:nth-child(odd) {
-    margin-left: -150px;
-    width: 190px;
-  }
 
-  &:nth-child(even) {
-    margin-right: -150px;
-  }
-  &:first-child {
-    margin-top: 30px;
-  }
   animation: ${(props) => keyframes`
   from { opacity: 1; }
   to { opacity: ${props.opacity}; }

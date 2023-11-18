@@ -1,6 +1,7 @@
 import React from "react";
 import "./Main.css";
 import Clouds from "./Clouds";
+import Nav from "./Nav";
 import { useState, useEffect } from "react";
 //import axios from 'axios';
 
@@ -73,7 +74,6 @@ export default function Main() {
     });
   };
 
-
   useEffect(() => {
     // 컴포넌트가 마운트될 때 updateCloud 호출
     updateCloud();
@@ -86,13 +86,12 @@ export default function Main() {
         <div className="message-count">N개의 구름이 도착했어요!</div>
       </div>
       <div className="drop-down">
-        <img src="/img/main/drop_down.png" alt="드롭다운버튼" onClick={toggleDropdown} />
-        {dropdownOpen && (
-          <div className="dropdown-menu">
-            <button>로그아웃</button>
-            <button>회원탈퇴</button>
-          </div>
-        )}
+        <img
+          src="/img/main/drop_down.png"
+          alt="드롭다운버튼"
+          onClick={toggleDropdown}
+        />
+        {dropdownOpen && <Nav />}
       </div>
       <div className="middle-container">
         {hasLetter ? (

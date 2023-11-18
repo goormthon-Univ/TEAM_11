@@ -7,6 +7,8 @@ export const Footer = styled.p`
   color: #ffffff;
   height: 9vh;
   justify-content: center;
+  width: 100%;
+  margin-top: 20px;
 `;
 export const Copyright = styled.div`
   font-size: 1ch;

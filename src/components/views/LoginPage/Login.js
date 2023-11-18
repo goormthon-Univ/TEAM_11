@@ -1,31 +1,53 @@
 import React from 'react'
+import { useEffect } from 'react';
 import './Login.css'
 import axios from "axios";
+import { useLocation, useNavigate } from 'react-router-dom';
+
 
 export default function Login() {
-    const handleLogin = async () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    /*     const handleOAuthKakao = async (code) => {
+            try {
+                window.location.href = 'https://43.202.49.87:8080/oauth/kakao';
+                // 카카오로부터 받아온 code를 서버에 전달하여 카카오로 회원가입 & 로그인한다
+                const response = await axios.get(`https://43.202.49.87:8080/oauth/login/kakao?code=${code}`);
+                const data = response.data; // 응답 데이터
+                alert("로그인 성공: " + data);
+                navigate("/");
+            } catch (error) {
+                console.log("로그인 에러:", error);
+            }
+        }; */
+    const handleOAuthKakao = async (code) => {
         try {
-            // OAuth2 로그인을 위한 API 경로
-            const oauthApiPath = 'https://43.202.49.87:8080/users/oauth2/kakao';
-
-            // axios를 사용하여 백엔드로 POST 요청 보내기
-            const response = await axios.post(oauthApiPath);
-
-            // 백엔드로부터의 응답 확인
-            console.log('로그인 응답:', response.data);
-
-            // 추가적인 로직수행..할거있으면 추가하기
+            // 카카오로부터 받아온 code를 서버에 전달하여 카카오로 회원가입 & 로그인한다
+            const response = await axios.get(`https://43.202.49.87:8080/oauth/login/kakao?code=${code}`);
+            const data = response.data; // 응답 데이터
+            alert("로그인 성공: " + data);
+            navigate("/");
         } catch (error) {
-            // 로그인에 실패한 경우 에러 처리
-            console.error('로그인 에러:', error.response || error.message);
+            console.log("로그인 에러:", error);
         }
     };
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const code = searchParams.get('code');  // 카카오는 Redirect 시키면서 code를 쿼리 스트링으로 준다.
+        if (code) {
+            console.log("CODE = " + code);
+            handleOAuthKakao(code);
+        }
+    }, [location]);
+
     return (
         <div className='login-container'>
             <div className='sentbycloud'><img src='/img/login/sentbycloud.png' alt="제목" /></div>
             <div className='lettercloud'><img src='/img/login/lettercloud.png' alt="편지구름" /></div>
             <div className='memory-text'><img src='/img/login/memory_text.png' alt="추억텍스트" /></div>
-            <div className='loginbtn' onClick={handleLogin}><img src='/img/login/loginbtn.png' alt="카카오톡로그인" /></div>
+            <div className='loginbtn' onClick={handleOAuthKakao}><img src='/img/login/loginbtn.png' alt="카카오톡로그인" /></div>
         </div>
     )
 }

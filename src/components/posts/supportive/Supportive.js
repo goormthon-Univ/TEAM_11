@@ -3,12 +3,14 @@ import supportiveCloud from "./../../../images/cloud/supportiveCloud.svg";
 import cloudHands from "./../../../images/cloud/supportiveHand.svg";
 import postImg from "./../../../images/post/longPost.svg";
 import { useState } from "react";
+import { useNavigate } from "react";
 import axios from "axios";
 
 export default function Grateful() {
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
   const [inputText, setInputText] = useState("");
+  const navigate = useNavigate();
 
   const handleTitleChange = (event) => {
     const title = event.target.value;
@@ -38,12 +40,19 @@ export default function Grateful() {
         })
         .then((response) => {
           console.log("작성 성공");
+          setTitle("");
           setName("");
           setInputText("");
+          const type = response.data.cloudType;
+          const Idx = response.data.cloudIdx;
+          console.log(type)
+          console.log(Idx)
+          navigate(`/cloud/${type}/${Idx}`);
         })
         .catch((error) => {
           console.log("작성 실패", error.message);
         });
+
     } else {
       // 유효하지 않은 입력 처리
       console.log("유효하지 않은 입력");

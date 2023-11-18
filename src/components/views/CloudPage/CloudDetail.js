@@ -12,6 +12,7 @@ import boomImg from "./../../../images/cloud/boomCloud.svg";
 import tailCloud from "./../../../images/cloud/tailCloud.svg";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import DesignedCloud from "./../../common/cloud/DesignCloud";
 
 export default function CloudDetail() {
   const { cloudType, cloudIdx } = useParams();
@@ -26,7 +27,7 @@ export default function CloudDetail() {
     getClouds();
     switch (cloudType) {
       case "1":
-        setCloudImg(gratefulImg);
+        setCloudImg("");
         break;
       case "2":
         setCloudImg(gratefulImg);
@@ -154,6 +155,9 @@ export default function CloudDetail() {
     <>
       <D.Title>00님의 {params.cloudIdx}번째 구름☁️</D.Title>
       {cloudType === "5" && cloud && <D.BoomCount>💣{restTime}</D.BoomCount>}
+      {cloudType === "1" && (
+        <DesignedCloud color={cloud.color} emotion={cloud.emotion} />
+      )}{" "}
       <D.Cloud src={cloudImg} />
       <D.CloudContainer>
         <D.Back src={postImg} />

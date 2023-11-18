@@ -8,7 +8,7 @@ export default function Main() {
   const [hasLetter, setHasLetter] = useState(true);
   const [isLoggedIn, setLoggedIn] = useState(true);
   const [userId, setUserId] = useState(null);
-  const [isOwner, setIsOwner] = useState(true);
+  const [isOwner, setIsOwner] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {

@@ -12,12 +12,12 @@ export default function Login() {
     const handleOAuthKakao = async (code) => {
         try {
             // 카카오로부터 받아온 code를 서버에 전달하여 카카오로 회원가입 & 로그인한다
-            const response = await axios.post(`https://43.202.49.87:8080/users/oauth2/kakao?code=${code}`);
+            const response = await axios.post(`https://43.202.49.87:8080/users/oauth2/kakao`, { code });
             const data = response.data; // 응답 데이터
-            alert("로그인 성공: " + data)
+            alert("로그인 성공: " + data);
             navigate("/");
         } catch (error) {
-            console.log("로그인 에러:", error)
+            console.log("로그인 에러:", error);
         }
     };
 
@@ -25,7 +25,7 @@ export default function Login() {
         const searchParams = new URLSearchParams(location.search);
         const code = searchParams.get('code');  // 카카오는 Redirect 시키면서 code를 쿼리 스트링으로 준다.
         if (code) {
-            alert("CODE = " + code)
+            console.log("CODE = " + code);
             handleOAuthKakao(code);
         }
     }, [location]);

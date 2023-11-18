@@ -10,6 +10,8 @@ import Supportive from "./components/posts/supportive/Supportive";
 import Boom from "./components/posts/boom/Boom";
 import CloudDetail from "./components/views/CloudPage/CloudDetail";
 import Footer from "./components/common/footer/Footer";
+import TeamAbout from "./components/views/AboutPage/TeamAbout";
+import ServiceAbout from "./components/views/AboutPage/ServiceAbout";
 import "./App.css";
 import styled from "styled-components";
 
@@ -28,6 +30,8 @@ function App() {
             <Route exact path="/apologetic" element={<Apologetic />} />
             <Route exact path="/supportive" element={<Supportive />} />
             <Route exact path="/boom" element={<Boom />} />
+            <Route exact path="/teamabout" element={<TeamAbout />} />
+            <Route exact path="/serviceabout" element={<ServiceAbout />} />
             <Route
               exact
               path="/cloud/:cloudType/:cloudIdx"

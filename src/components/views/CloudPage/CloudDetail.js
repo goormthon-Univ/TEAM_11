@@ -119,6 +119,7 @@ export default function CloudDetail() {
         .then((response) => {
           console.log("작성 성공");
           setComment("");
+          getClouds();
         })
         .catch((error) => {
           console.log(cloudIdx, comment);
@@ -185,7 +186,7 @@ export default function CloudDetail() {
       {isModalOpen && (
         <D.Modal>
           <D.ModalTitle>삭제하시겠습니까?</D.ModalTitle>
-          <D.ModalContent>삭제하시겠습니까?</D.ModalContent>
+          <D.ModalContent>삭제 후 복구되지 않습니다.</D.ModalContent>
           <D.ModalButtonWrapper>
             <D.ModalCancel onClick={noModal}>취소</D.ModalCancel>
             <D.ModalDelete onClick={deleteCloud}>확인</D.ModalDelete>

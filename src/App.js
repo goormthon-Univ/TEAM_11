@@ -16,6 +16,7 @@ import ServiceAbout from "./components/views/AboutPage/ServiceAbout";
 import "./App.css";
 import styled from "styled-components";
 import Clouds from "./components/views/MainPage/Clouds";
+import Signup from "./components/views/LoginPage/Signup";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route exact path="/teamabout" element={<TeamAbout />} />
             <Route exact path="/serviceabout" element={<ServiceAbout />} />
             <Route exact path="/clouds" element={<Clouds />} />
+            <Route exact path="/signup" element={<Signup />} />
             <Route
               exact
               path="/cloud/:cloudType/:cloudIdx"

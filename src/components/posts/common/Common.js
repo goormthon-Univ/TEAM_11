@@ -4,11 +4,19 @@ import postImg from "./../../../images/post/longPost.svg";
 import hand from "./../../../images/cloud/boomHand.svg";
 import { useState } from "react";
 import axios from "axios";
+import { useLocation } from 'react-router-dom';
 
 export default function Boom() {
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
   const [inputText, setInputText] = useState("");
+  const location = useLocation();
+
+  const { color, face, icon } = location.state || {};
+
+  console.log('Color:', color);
+  console.log('Face:', face);
+  console.log('Icon:', icon);
 
   const handleTitleChange = (event) => {
     const title = event.target.value;

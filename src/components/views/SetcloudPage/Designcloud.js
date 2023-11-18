@@ -17,9 +17,7 @@ export default function Designcloud() {
   const [selectedIcon, setSelectedIcon] = useState(
     ""
   );
-  const isColorClicked = () => {
 
-  }
   const handleColorClick = (imageSrc) => {
     // 클릭한 이미지의 경로를 상태로 설정
     setSelectedColor(imageSrc);

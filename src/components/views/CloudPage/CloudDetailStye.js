@@ -21,7 +21,7 @@ export const BoomCount = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  top: 145px;
+  top: 85px;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;

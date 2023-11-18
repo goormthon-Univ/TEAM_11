@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import * as D from "./CloudDetailStye";
+import * as C from "./../../common/CloudStyle";
 import gratefulImg from "./../../../images/cloud/gratefulCloud.svg";
+import supportivehand from "./../../../images/cloud/supportiveHand.svg";
+import boomhand from "./../../../images/cloud/boomHand.svg";
+import commonHand from "./../../../images/post/cloudHands.svg";
 import postImg from "./../../../images/post/longPost.svg";
 import apologeticImg from "./../../../images/cloud/apologeticCloud.svg";
 import supportiveImg from "./../../../images/cloud/supportiveCloud.svg";
@@ -17,6 +21,7 @@ export default function CloudDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comment, setComment] = useState("");
   const [cloud, setCloud] = useState("");
+  const [cloudhand, setCloudhand] = useState(commonHand);
   useEffect(() => {
     getClouds();
     switch (cloudType) {
@@ -31,9 +36,11 @@ export default function CloudDetail() {
         break;
       case "4":
         setCloudImg(supportiveImg);
+        setCloudhand(supportivehand);
         break;
       default:
         setCloudImg(boomImg);
+        setCloudhand(boomhand);
         break;
     }
   }, []);
@@ -150,6 +157,7 @@ export default function CloudDetail() {
       <D.Cloud src={cloudImg} />
       <D.CloudContainer>
         <D.Back src={postImg} />
+        <C.Cloudhand src={cloudhand} />
         <D.CloudWrapper>
           <D.CloudTitle>{cloud.title}</D.CloudTitle>
           <D.ContentWrapper>

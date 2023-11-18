@@ -28,20 +28,21 @@ export const Info = styled.div`
 `;
 
 export const Cloud = styled.img`
-  width: 353px;
+  width: 380px;
   margin-top: -80px;
   z-index: 10;
 `;
 export const Cloudhand = styled.img`
-  width: 353px;
-  margin-top: -80px;
-  z-index: 10;
+  height: 100px;
+  position: absolute;
+  top: -50px;
+  left: 10.5%;
 `;
 export const InputContainer = styled.div`
   position: relative;
   width: 360px;
   margin: 0 auto;
-  margin-top: -125px;
+  margin-top: -135px;
 `;
 export const InputBack = styled.img`
   width: 360px;

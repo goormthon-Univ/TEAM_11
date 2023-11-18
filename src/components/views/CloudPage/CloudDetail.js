@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import * as D from "./CloudDetailStye";
+import * as C from "./../../common/CloudStyle";
 import gratefulImg from "./../../../images/cloud/gratefulCloud.svg";
+import supportivehand from "./../../../images/cloud/supportiveHand.svg";
+import boomhand from "./../../../images/cloud/boomHand.svg";
+import commonHand from "./../../../images/post/cloudHands.svg";
 import postImg from "./../../../images/post/longPost.svg";
 import apologeticImg from "./../../../images/cloud/apologeticCloud.svg";
 import supportiveImg from "./../../../images/cloud/supportiveCloud.svg";
@@ -8,6 +12,7 @@ import boomImg from "./../../../images/cloud/boomCloud.svg";
 import tailCloud from "./../../../images/cloud/tailCloud.svg";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import DesignedCloud from "./../../common/cloud/DesignCloud";
 
 export default function CloudDetail() {
   const { cloudType, cloudIdx } = useParams();
@@ -17,11 +22,12 @@ export default function CloudDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comment, setComment] = useState("");
   const [cloud, setCloud] = useState("");
+  const [cloudhand, setCloudhand] = useState(commonHand);
   useEffect(() => {
     getClouds();
     switch (cloudType) {
       case "1":
-        setCloudImg(gratefulImg);
+        setCloudImg("");
         break;
       case "2":
         setCloudImg(gratefulImg);
@@ -31,9 +37,11 @@ export default function CloudDetail() {
         break;
       case "4":
         setCloudImg(supportiveImg);
+        setCloudhand(supportivehand);
         break;
       default:
         setCloudImg(boomImg);
+        setCloudhand(boomhand);
         break;
     }
   }, []);
@@ -147,9 +155,13 @@ export default function CloudDetail() {
     <>
       <D.Title>00님의 {params.cloudIdx}번째 구름☁️</D.Title>
       {cloudType === "5" && cloud && <D.BoomCount>💣{restTime}</D.BoomCount>}
+      {cloudType === "1" && (
+        <DesignedCloud color={cloud.color} emotion={cloud.emotion} />
+      )}{" "}
       <D.Cloud src={cloudImg} />
       <D.CloudContainer>
         <D.Back src={postImg} />
+        <C.Cloudhand src={cloudhand} />
         <D.CloudWrapper>
           <D.CloudTitle>{cloud.title}</D.CloudTitle>
           <D.ContentWrapper>

@@ -1,5 +1,6 @@
 import * as G from "./../../common/CloudStyle";
 import supportiveCloud from "./../../../images/cloud/supportiveCloud.svg";
+import cloudHands from "./../../../images/cloud/supportiveHand.svg";
 import postImg from "./../../../images/post/longPost.svg";
 import { useState } from "react";
 import axios from "axios";
@@ -59,6 +60,7 @@ export default function Grateful() {
       <G.Cloud src={supportiveCloud} />
       <G.InputContainer>
         <G.InputBack src={postImg} />
+        <G.Cloudhand src={cloudHands} />
         <G.InputWrapper>
           <G.InputTitle
             type="text"

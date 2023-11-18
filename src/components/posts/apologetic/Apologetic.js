@@ -1,5 +1,6 @@
 import * as G from "./../../common/CloudStyle";
 import gratefulCloud from "./../../../images/cloud/apologeticCloud.svg";
+import cloudHands from "./../../..//images/post/cloudHands.svg";
 import postImg from "./../../../images/post/longPost.svg";
 import { useState } from "react";
 import axios from "axios";
@@ -59,6 +60,7 @@ export default function Apologetic() {
       <G.Cloud src={gratefulCloud} />
       <G.InputContainer>
         <G.InputBack src={postImg} />
+        <G.Cloudhand src={cloudHands} />
         <G.InputWrapper>
           <G.InputTitle
             type="text"

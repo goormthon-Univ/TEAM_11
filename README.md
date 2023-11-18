@@ -27,9 +27,8 @@
 
 ### 1. 구름 등록
 
-![Section 1.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e1647f9-ce64-4b47-b1d8-1c072cd56707/7f5b247b-94c3-4c8a-b4b4-6d8acfe3c883/Section_1.png)
-
-![Section 2.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/2e1647f9-ce64-4b47-b1d8-1c072cd56707/2d973555-fac1-469b-afab-55af34a70767/Section_2.png)
+![Section 1](https://github.com/goormthon-Univ/TEAM_11/assets/101270528/054c93ef-5741-4d6a-a983-1bb900f5448b)
+![Section 2](https://github.com/goormthon-Univ/TEAM_11/assets/101270528/612d2e31-500e-47c0-be84-d433deb93dad)
 
 **1) 일반 구름**
 

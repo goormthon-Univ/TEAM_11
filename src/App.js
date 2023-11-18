@@ -5,6 +5,7 @@ import Specialcloud from "./components/views/SetcloudPage/Specialcloud";
 import Login from "./components/views/LoginPage/Login";
 import Designcloud from "./components/views/SetcloudPage/Designcloud";
 import Grateful from "./components/posts/grateful/Grateful";
+import Common from "./components/posts/common/Common";
 import Apologetic from "./components/posts/apologetic/Apologetic";
 import Supportive from "./components/posts/supportive/Supportive";
 import Boom from "./components/posts/boom/Boom";
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/specialcloud" element={<Specialcloud />} />
             <Route exact path="/designcloud" element={<Designcloud />} />
             <Route exact path="/grateful" element={<Grateful />} />
+            <Route exact path="/common" element={<Common />} />
             <Route exact path="/apologetic" element={<Apologetic />} />
             <Route exact path="/supportive" element={<Supportive />} />
             <Route exact path="/boom" element={<Boom />} />

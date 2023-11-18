@@ -19,8 +19,8 @@ function App() {
       <BrowserRouter>
         <GlobalWrapper>
           <Routes>
-            <Route exact path="/" element={<Main />} />
-            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/main" element={<Main />} />
+            <Route exact path="/" element={<Login />} />
             <Route exact path="/choicecloud" element={<Choicecloud />} />
             <Route exact path="/specialcloud" element={<Specialcloud />} />
             <Route exact path="/designcloud" element={<Designcloud />} />

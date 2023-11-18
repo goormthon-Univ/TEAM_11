@@ -2,11 +2,10 @@ import React from "react";
 import "./Designcloud.css";
 import { useState } from "react";
 // import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 export default function Designcloud() {
-  const [isColorSelected, setColorSelected] = useState(false);
-  const [isFaceSelected, setFaceSelected] = useState(false);
-  const [isIconSelected, setIconSelected] = useState(false);
+  const navigate = useNavigate();
 
   const [selectedColor, setSelectedColor] = useState(
     "/img/designcloud/default_cloud.png"
@@ -29,6 +28,16 @@ export default function Designcloud() {
   const handleIconClick = (imageSrc) => {
     // 클릭한 이미지의 경로를 상태로 설정
     setSelectedIcon(imageSrc);
+  };
+  const handleCloudCompletion = () => {
+    // 페이지 이동과 함께 데이터 전달
+    navigate('/common', {
+      state: {
+        color: selectedColor,
+        face: selectedFace,
+        icon: selectedIcon
+      },
+    });
   };
 
   return (
@@ -209,7 +218,7 @@ export default function Designcloud() {
           </div>
         </div>
       </div>
-      <button className="custom-complete">구름 완성</button>
+      <button className="custom-complete" onClick={handleCloudCompletion}>구름 완성</button>
     </div>
   );
 }

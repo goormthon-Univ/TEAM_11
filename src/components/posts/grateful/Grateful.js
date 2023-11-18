@@ -31,7 +31,7 @@ export default function Grateful() {
       e.preventDefault();
       axios
         .post(`https://43.202.49.87:8080/clouds/grateful`, {
-          cloudOwner: "kms02171@naver.com", // 하늘 소유자 id
+          userId: "kms02171@naver.com", // 하늘 소유자 id
           title: title,
           content: inputText,
           nickname: name,

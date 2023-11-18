@@ -1,6 +1,7 @@
 import * as G from "./../../common/CloudStyle";
 import boomCloud from "./../../../images/cloud/boomCloud.svg";
 import postImg from "./../../../images/post/longPost.svg";
+import hand from "./../../../images/cloud/boomHand.svg";
 import { useState } from "react";
 import axios from "axios";
 
@@ -55,6 +56,7 @@ export default function Boom() {
       <G.Cloud src={boomCloud} />
       <G.InputContainer>
         <G.InputBack src={postImg} />
+        <G.Cloudhand src={hand} />
         <G.InputWrapper>
           <G.InputTitle
             type="text"

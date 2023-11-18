@@ -58,9 +58,10 @@ export default function Grateful() {
         고마운 마음을 전해 보세요 💌
       </G.Info>
       <G.Cloud src={gratefulCloud} />
-      <G.Cloudhand src={cloudHands} />
+
       <G.InputContainer>
         <G.InputBack src={postImg} />
+        <G.Cloudhand src={cloudHands} />
         <G.InputWrapper>
           <G.InputTitle
             type="text"

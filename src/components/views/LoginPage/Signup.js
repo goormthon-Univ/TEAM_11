@@ -31,6 +31,7 @@ export default function Signup() {
       );
       console.log(response);
       alert("회원가입 성공");
+      window.location.href = `/`;
     } catch (error) {
       console.error(error);
       alert("회원가입 실패");

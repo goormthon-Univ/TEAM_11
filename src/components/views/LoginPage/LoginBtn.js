@@ -23,7 +23,7 @@ export default function Login() {
       if (response.data.message === "로그인이 정상적으로 완료되었습니다.") {
         localStorage.setItem("userId", response.data.userId);
         localStorage.setItem("isLoggedIn", "true");
-        window.location.href = `/${response.data.userId}`;
+        window.location.href = `/main/${response.data.userId}`;
       } else {
         alert("로그인 실패: " + response.data.message);
       }

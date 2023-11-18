@@ -12,7 +12,7 @@ export default function Login() {
     const handleOAuthKakao = async (code) => {
         try {
             // 카카오로부터 받아온 code를 서버에 전달하여 카카오로 회원가입 & 로그인한다
-            const response = await axios.post(`http://localhost:8080/oauth/login/kakao?code=${code}`);
+            const response = await axios.post(`https://43.202.49.87:8080/users/oauth2/kakao?code=${code}`);
             const data = response.data; // 응답 데이터
             alert("로그인 성공: " + data)
             navigate("/");

@@ -10,6 +10,8 @@ export const Footer = styled.p`
   align-items: center;
   width: 100%;
   margin-top: 20px;
+  position: fixed;
+  bottom: 0;
 `;
 export const Copyright = styled.div`
   font-size: 1ch;
